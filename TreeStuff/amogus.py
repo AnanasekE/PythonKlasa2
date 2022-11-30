@@ -34,7 +34,7 @@ def insert(data, root, name):
 def PrintSorted(root):
     if root:
         PrintSorted(root.left)
-        print(root.name)
+        print(root.name, root.data.mean)
         PrintSorted(root.right)
 
 
@@ -46,8 +46,7 @@ def Remove(root, low, high):
 
     if root.data.mean < low:
         root = root.right
-        print(f'root: {root}') # problem is here (root.data.mean) is None
-    if root.data.mean > high:
+    elif root.data.mean > high:
         root = root.left
 
     return root
