@@ -34,7 +34,7 @@ def insert(data, root, name):
 def PrintSorted(root):
     if root:
         PrintSorted(root.left)
-        print(root.name, root.data.mean)
+        print(root.name)
         PrintSorted(root.right)
 
 
@@ -67,21 +67,9 @@ def main():
 
 if __name__ == '__main__':
     count, money, companies = main()
-    # print(f'Count: {count}, Money: {money}, Companies: {companies}')
-    # for g in companies:
-    #     print(f'Name: {g.name}, Prices: {g.prices}, Mean: {g.mean}')
-
-    # root = Node(10)
-    # for r in range(10):
-    #     b = randint(0, 100)
-    #     # print(f'b: {b}')
-    #     a = insert(b, root)
-    # PrintSorted(root)
 
     root = Node(companies[0], companies[0].name)
     for i in range(1, len(companies)):
         root = insert(companies[i], root, companies[i].name)
-    PrintSorted(root)
-    print('-----------------')
     root = Remove(root, money[0], money[1])
     PrintSorted(root)
