@@ -34,7 +34,7 @@ def insert(data, root, name):
 def PrintSorted(root):
     if root:
         PrintSorted(root.left)
-        print(root.name)
+        print(root.name, root.data.mean)
         PrintSorted(root.right)
 
 
@@ -53,15 +53,15 @@ def Remove(root, low, high):
 
 
 def main():
-    with open('input.txt', 'r') as file:
-        input_lines = [line.strip() for line in file]
 
-    count = input_lines[0]
-    money = list(map(int, input_lines[1].split(' ')))
+    count = int(input())
+    money = list(map(int, input().split(' ')))
     companies = []
-    for i in range(0, int(count) * 2, 2):
-        nums = input_lines[i + 3].split(' ')
-        companies.append(Company(input_lines[i + 2].split(' ')[0], list(map(int, nums))))
+    for i in range(count):
+        name = input()
+        nums = input().split(' ')
+        companies.append(Company(name, list(map(float, nums))))
+
     return count, money, companies
 
 
@@ -71,5 +71,7 @@ if __name__ == '__main__':
     root = Node(companies[0], companies[0].name)
     for i in range(1, len(companies)):
         root = insert(companies[i], root, companies[i].name)
+    PrintSorted(root)
+    print()
     root = Remove(root, money[0], money[1])
     PrintSorted(root)

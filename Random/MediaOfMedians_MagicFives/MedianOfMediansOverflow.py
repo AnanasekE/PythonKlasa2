@@ -10,11 +10,11 @@ def quickSort(m, left, right):
             i += 1
         elif m[j] == pivot:
             m[j], m[i] = m[i], m[j]
-    print(m)
+    # print(m)
     m[left], m[i - 1] = m[i - 1], m[left]
     m = quickSort(m, left, i - 1)
     m = quickSort(m, i, right)
-    print(m)
+    # print(m)
     return m
 
 
@@ -59,10 +59,10 @@ def dSelect(m, position):
             i += 1
         elif m[j] == pivot:
             m[j], m[i] = m[i], m[j]
-        print("i: " + str(i))
-        print("j: " + str(j))
-    print("index of pivot: " + str(m.index(pivot)))
-    print("pivot: " + str(pivot) + " list: " + str(m))
+    #     print("i: " + str(i))
+    #     print("j: " + str(j))
+    # print("index of pivot: " + str(m.index(pivot)))
+    # print("pivot: " + str(pivot) + " list: " + str(m))
     if m.index(pivot) == position:
         return pivot
     elif m.index(pivot) > position:
@@ -71,4 +71,4 @@ def dSelect(m, position):
         return dSelect(m[i:], position - i)
 
 
-getMedian([10, 1, 1, 10, 5, 21])
+print(dSelect([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 4))
