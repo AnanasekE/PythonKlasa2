@@ -21,7 +21,7 @@ QuickSort(arr, 0, len(arr) - 1)
 print(f'Sorted array: {arr}')
 
 # x = input().split()
-x = "6 4 3".split()
+x = "6 4 56 3".split()
 print(x)
 boxCount = int(x[0])
 packageCount = int(x[1])

@@ -62,7 +62,8 @@ def start(people, k):
             x[j].append(people[j + i])
         x[j].sort(key=lambda x: x.index)
         medians.append(median_grouped(x[j]))
-        # something is wrong with the medians and I cant figure it out, in the first round the second value does not match the real median
+        # something is wrong with the medians and I cant figure it out, in the first round the second value does not
+        # match the real median
     mdMd = median_grouped(medians)
     # print(f'Medians: {medians}')
     # print(f'Medians Of Medians: {mdMd}')
@@ -84,3 +85,5 @@ def start(people, k):
 
 
 start(people, k)
+
+
