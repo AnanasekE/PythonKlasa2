@@ -47,6 +47,18 @@ x = inputs()
 people, k = x[1], x[0]
 
 
+def getMedian(list1):
+    length = len(list1)
+    if length <= 1:
+        return list1[0]
+    elif length % 2 == 0:
+        i = (length - 1) / 2
+        return list1[int(i)]
+    else:
+        i = (length) / 2
+        return list1[int(i)]
+
+
 def start(people, k):
     if len(people) <= 3:
         people.sort(key=lambda x: x.index)
@@ -61,17 +73,18 @@ def start(people, k):
         for i in range(5):
             x[j].append(people[j + i])
         x[j].sort(key=lambda x: x.index)
-        medians.append(median_grouped(x[j]))
+        medians.append(getMedian(x[j]))
         # something is wrong with the medians and I cant figure it out, in the first round the second value does not
         # match the real median
-    mdMd = median_grouped(medians)
+        print(medians)
+    mdMd = getMedian(medians)
     # print(f'Medians: {medians}')
     # print(f'Medians Of Medians: {mdMd}')
     L = []
     R = []
 
     for a in range(len(people)):
-        if int(people[a].index) <= int(mdMd):
+        if int(people[a].index) <= int(mdMd.index):
             L.append(people[a])
         else:
             R.append(people[a])
@@ -85,5 +98,3 @@ def start(people, k):
 
 
 start(people, k)
-
-
