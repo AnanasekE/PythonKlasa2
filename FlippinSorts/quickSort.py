@@ -20,7 +20,7 @@ arr = [7, 1, 8, 9, 2, 6, 5]
 QuickSort(arr, 0, len(arr) - 1)
 print(f'Sorted array: {arr}')
 
-# x = input().split()
+# target = input().split()
 x = "6 4 56 3".split()
 print(x)
 boxCount = int(x[0])
