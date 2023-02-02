@@ -1,6 +1,7 @@
 import statistics
 
 
+
 class Company:
     def __init__(self, name, prices):
         self.name = name
@@ -21,13 +22,13 @@ class Node:
 
 def insert(data, root, name):
     if root is None:
+        root = Node(data, name)
         return Node(data, name)
 
     if root.data < data:
         root.right = insert(data, root.right, name)
     else:
         root.left = insert(data, root.left, name)
-
     return root
 
 
@@ -53,7 +54,6 @@ def Remove(root, low, high):
 
 
 def main():
-
     count = int(input())
     money = list(map(int, input().split(' ')))
     companies = []
