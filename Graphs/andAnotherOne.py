@@ -1,10 +1,10 @@
 graph = []
-n = int(input())
-for _ in range(n):
-    line = input().split(' ')
+n = int(input('Enter the number of lines: '))
+for x in range(n):
+    line = input(f'Enter the {x} graph line').split(' ')
     graph.append(line)
 
-print(graph)
+print(f'Graph: {graph}')
 
 wordsToFind = input().split(' ')
-print(wordsToFind)
+print(f'Words to find: {wordsToFind}')
